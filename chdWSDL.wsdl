@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Invoke_CHDHttp_Service" targetNamespace="http://CHD_LIB/CHD" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:this="http://CHD_LIB/CHD" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:import namespace="http://CHD_LIB/CHD" location="CHD.wsdl">
+    </wsdl:import>
+  <wsdl:binding name="Invoke_CHDHttpBinding" type="this:CHD">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Service_Record_Insert">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_InsertRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_InsertResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Error_Message">
+        <soap:fault name="Error_Message" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Insert_V2">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_Insert_V2Request">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_Insert_V2Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Error_Message">
+        <soap:fault name="Error_Message" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Insert_V3">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_Insert_V3Request">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_Insert_V3Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Error_Message">
+        <soap:fault name="Error_Message" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Update">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_UpdateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_UpdateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Error_Message">
+        <soap:fault name="Error_Message" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Update_V2">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_Update_V2Request">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_Update_V2Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Error_Message">
+        <soap:fault name="Error_Message" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Cerner_ENV_Query">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Cerner_ENV_QueryRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Cerner_ENV_QueryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Error_Message">
+        <soap:fault name="Error_Message" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Outbound">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_OutboundRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_Outbound1Msg1">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Error_Message">
+        <soap:fault name="Error_Message" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LOV_Query">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="LOV_QueryRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="LOV_QueryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Error_Message">
+        <soap:fault name="Error_Message" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Outbound_V2">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_Outbound_V2Request">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_Outbound_V2Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Error_Message">
+        <soap:fault name="Error_Message" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Attachment">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_AttachmentRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_AttachmentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault1">
+        <soap:fault name="fault1" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Attachment_Query">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_Attachment_QueryRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_Attachment_QueryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault1">
+        <soap:fault name="fault1" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Outbound_V3">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_Outbound_V3Request">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_Outbound_V3Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Service_Record_Outbound_V3Fault1">
+        <soap:fault name="Service_Record_Outbound_V3Fault1" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Outbound_V4">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_Outbound_V4Request">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_Outbound_V4Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Service_Record_Outbound_V4Fault1">
+        <soap:fault name="Service_Record_Outbound_V4Fault1" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Outbound_V5">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_Outbound_V5Request">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_Outbound_V5Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Service_Record_Outbound_V5Fault1">
+        <soap:fault name="Service_Record_Outbound_V5Fault1" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Outbound_V6">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_Outbound_V6Request">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_Outbound_V6Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Service_Record_Outbound_V6Fault1">
+        <soap:fault name="Service_Record_Outbound_V6Fault1" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Outbound_V7">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_Outbound_V7Request">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_Outbound_V7Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Service_Record_Outbound_V7Fault1">
+        <soap:fault name="Service_Record_Outbound_V7Fault1" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Outbound_V8">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_Outbound_V8Request">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_Outbound_V8Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Service_Record_Outbound_V8Fault1">
+        <soap:fault name="Service_Record_Outbound_V8Fault1" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Insert_V4">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Service_Record_Insert_V4Request">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Service_Record_Insert_V4Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Error_Message">
+        <soap:fault name="Error_Message" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Invoke_CHDHttpService">
+    <wsdl:port name="Invoke_CHDHttpPort" binding="this:Invoke_CHDHttpBinding">
+      <soap:address location="http://wservicecrt.cerner.com:80/CHD_INTFWeb/sca/Invoke"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
