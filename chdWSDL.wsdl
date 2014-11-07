@@ -1,8 +1,1287 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="Invoke_CHDHttp_Service" targetNamespace="http://CHD_LIB/CHD" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:this="http://CHD_LIB/CHD" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
-  <wsdl:import namespace="http://CHD_LIB/CHD" location="CHD.wsdl">
-    </wsdl:import>
-  <wsdl:binding name="Invoke_CHDHttpBinding" type="this:CHD">
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="CHD" targetNamespace="http://CHD_LIB/CHD" xmlns:bons1="http://CHD_LIB" xmlns:bons2="http://CHD_LIB/SBL_SRAttachment" xmlns:bons3="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons4="http://CHD_Outbound_LIB" xmlns:bons5="http://www.siebel.com/xml/Contact%20CERN" xmlns:bons6="http://www.siebel.com/xml/SR_LOV_QUERY_Ouput" xmlns:bons7="http://wservice.cerner.com/" xmlns:bons8="http://www.siebel.com/xml/Service%20Request%20Detail%20CWx%20CERN" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://CHD_LIB/CHD" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://CHD_LIB/CHD">
+            <xsd:import namespace="http://CHD_LIB"/>
+            <xsd:import namespace="http://www.siebel.com/xml/Service%20Request%20Detail%20CWx%20CERN"/>
+            <xsd:import namespace="http://CHD_Outbound_LIB"/>
+            <xsd:import namespace="http://wservice.cerner.com/"/>
+            <xsd:import namespace="http://CHD_LIB/SBL_SRAttachment"/>
+            <xsd:import namespace="http://www.siebel.com/xml/Contact%20CERN"/>
+            <xsd:import namespace="http://www.siebel.com/xml/SR_LOV_QUERY_Ouput"/>
+            <xsd:import namespace="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN"/>           
+      <xsd:element name="Service_Record_Insert">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail" nillable="true" type="bons1:Service_Record_Insert"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Service_Record_InsertResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Number" nillable="true" type="xsd:string"/>
+                        <xsd:element name="External_ID" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Service_Record_Insert_V2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail_V2" nillable="true" type="bons1:Service_Record_Insert_V2"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Service_Record_Insert_V2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Number" nillable="true" type="xsd:string"/>
+                        <xsd:element name="External_ID" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Insert_V3">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail_V2" nillable="true" type="bons1:Service_Record_Insert_V2"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Service_Record_Insert_V3Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Number" nillable="true" type="xsd:string"/>
+                        <xsd:element name="External_ID" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Update">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail" nillable="true" type="bons1:Service_Record_Update"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_UpdateResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail" nillable="true" type="bons4:Service_Record_Output"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Service_Record_Update_V2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail_V2" nillable="true" type="bons1:Service_Record_Update_V2"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Update_V2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail_V2" nillable="true" type="bons4:Service_Record_Output_V4"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Cerner_ENV_Query">
+        <xsd:complexType>
+          <xsd:sequence>
+                        <xsd:element name="Client_Mnemonic" nillable="true" type="bons5:string10"/>
+                    </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Cerner_ENV_QueryResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Environments" nillable="true" type="bons3:ListofClient_Environments"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="string_element" nillable="true" type="xsd:string"/>
+            <xsd:element name="Service_Record_Outbound">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Client_Mnemonic" nillable="true" type="bons5:string10"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_OutboundResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail" nillable="true" type="bons4:ListOfService_Record_Output_TopElmt"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="LOV_Query">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="SearchSpec" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="LOV_QueryResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ListOfValues" nillable="true" type="bons6:ListOfValueTopElmt"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Client_Mnemonic" nillable="true" type="bons5:string10"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail" nillable="true" type="bons1:ListOfService_Record_Output_TopElmt_V2"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="string_element1" nillable="true" type="xsd:string"/>
+            <xsd:element name="Service_Record_Attachment">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ServiceRequestAttachment" nillable="true" type="bons2:ServiceRequestAttachmentInput"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_AttachmentResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="bons7:SR_ATT_INSRT_Output"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Service_Record_Attachment_Query">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ServiceRequestAttachmentQueryInput" nillable="true" type="bons2:ServiceRequestAttachmentQueryInput"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Attachment_QueryResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ServiceRequestAttachmentQueryOutput" nillable="true" type="bons2:ServiceRequestAttachmentQueryOutput"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V3">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Client_Mnemonic" nillable="true" type="bons5:string10"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V3Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail" nillable="true" type="bons1:ListOfService_Record_Output_TopElmt_V3"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V3Fault1" nillable="true" type="xsd:string"/>
+     <xsd:element name="Service_Record_Outbound_V4">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Client_Mnemonic" nillable="true" type="bons5:string10"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V4Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail_V4" nillable="true" type="bons1:ListOfService_Record_Output_TopElmt_V4"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V4Fault1" nillable="true" type="xsd:string"/>
+            <xsd:element name="Service_Record_Outbound_V5">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Client_Mnemonic" nillable="true" type="bons5:string10"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V5Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail_V5" nillable="true" type="bons1:ListOfService_Record_Output_TopElmt_V5"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V5Fault1_Service_Record_Outbound_V5Fault1" nillable="true" type="xsd:string"/>
+            <xsd:element name="Service_Record_Outbound_V6">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Client_Mnemonic" nillable="true" type="bons5:string10"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V6Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail_V6" nillable="true" type="bons1:ListOfService_Record_Output_TopElmt_V6"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V6Fault1_Service_Record_Outbound_V6Fault1" nillable="true" type="xsd:string"/>
+            <xsd:element name="Service_Record_Outbound_V7">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Client_Mnemonic" nillable="true" type="bons5:string10"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V7Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail_V7" nillable="true" type="bons1:ListOfService_Record_Output_TopElmt_V7"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V7Fault1" nillable="true" type="xsd:string"/>
+            <xsd:element name="Service_Record_Outbound_V8">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Client_Mnemonic" nillable="true" type="bons8:string10"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V8Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail_V8" nillable="true" type="bons1:ListOfService_Record_Output_TopElmt_V8"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Outbound_V8Fault1" nillable="true" type="xsd:string"/>
+            <xsd:element name="Service_Record_Insert_V4">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Detail_V4" nillable="true" type="bons1:Service_Record_Insert_V4"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Insert_V4Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Service_Record_Number" nillable="true" type="xsd:string"/>
+                        <xsd:element name="External_ID" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="Service_Record_Insert_V4Fault1_Error_Message" nillable="true" type="xsd:string"/>
+        </xsd:schema>
+        <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://CHD_Outbound_LIB" xmlns:bons0="http://CHD_Outbound_LIB" xmlns:bons01="http://www.siebel.com/xml/Contact%20CERN" xmlns:bons02="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN" xmlns:bons03="http://www.siebel.com/xml/Contact%20CERN" xmlns:bons04="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN" xmlns:bons1="http://CHD_Outbound_LIB" xmlns:bons11="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons12="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons13="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons14="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons15="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons2="http://www.siebel.com/xml/Contact%20CERN" xmlns:bons21="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN" xmlns:bons22="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN" xmlns:bons3="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN" xmlns:bons31="http://CHD_Outbound_LIB" xmlns:bons32="http://CHD_Outbound_LIB" xmlns:bons4="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons41="http://CHD_LIB" xmlns:bons5="http://CHD_Outbound_LIB">
+      <xsd:import namespace="http://CHD_LIB"/>
+      <xsd:import namespace="http://www.siebel.com/xml/Contact%20CERN"/>
+      <xsd:import namespace="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN"/>
+      <xsd:import namespace="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN"/>
+      <xsd:complexType name="ListOfService_Record_Output_TopElmt">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListOfService_Record_Output" type="bons0:ListOfService_Record_Output">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListOfService_Record_Output">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Service_Record_Output" type="bons0:Service_Record_Output">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Service_Record_Output">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="Client_Mnemonic" type="bons2:string15"/>
+			<xsd:element minOccurs="1" name="Contact_Login_ID" type="bons2:string15"/>
+			<xsd:element minOccurs="1" name="Solution_Family" type="bons4:string30"/>
+			<xsd:element minOccurs="1" name="Solution" type="bons4:string30"/>
+			<xsd:element minOccurs="1" name="Environment" type="bons4:string30"/>
+			<xsd:element minOccurs="1" name="Severity" type="bons4:string30"/>
+			<xsd:element minOccurs="1" name="Summary" type="bons4:string100"/>
+			<xsd:element minOccurs="0" name="Description" type="bons3:string1500"/>
+			<xsd:element minOccurs="0" name="Protected_Health_Information" type="bons4:string100"/>
+			<xsd:element minOccurs="0" name="Project_Team" type="bons4:string30"/>
+			<xsd:element minOccurs="1" name="External_ID" type="bons4:string30"/>
+
+			<xsd:element minOccurs="0" name="Owner" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Owner_Phone" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Owner_Email" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Status" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Sub-Status" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Conversion_Status" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Closed" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Entitlement" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Service_Record_Number" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Reopen_Reason" type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofActivity" type="bons0:Activity"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Activity">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Activity_Text" type="bons3:string1500">
+			</xsd:element>
+			<xsd:element minOccurs="1" name="External_ID" type="bons11:string30">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Activity_Type" type="bons11:string30">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Activity_Id" type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Service_Record_Output_V2">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="Client_Mnemonic" type="bons01:string15"/>
+			<xsd:element minOccurs="1" name="Contact_Login_ID" type="bons01:string15"/>
+			<xsd:element minOccurs="1" name="Solution_Family" type="bons12:string30"/>
+			<xsd:element minOccurs="1" name="Solution" type="bons12:string30"/>
+			<xsd:element minOccurs="1" name="Environment" type="bons12:string30"/>
+			<xsd:element minOccurs="1" name="Severity" type="bons12:string30"/>
+			<xsd:element minOccurs="1" name="Summary" type="bons12:string100"/>
+			<xsd:element minOccurs="0" name="Description" type="bons21:string1500"/>
+			<xsd:element minOccurs="0" name="Protected_Health_Information" type="bons12:string100"/>
+			<xsd:element minOccurs="0" name="Project_Team" type="bons12:string30"/>
+			<xsd:element minOccurs="1" name="External_ID" type="bons12:string30"/>
+			<xsd:element minOccurs="0" name="Owner" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Owner_Phone" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Owner_Email" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Sub-Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Conversion_Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Closed" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Entitlement" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Service_Record_Number" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Reopen_Reason" type="xsd:string"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofActivity" type="bons31:Activity_V2"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Activity_V2">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Activity_Text" type="bons02:string1500"/>
+			<xsd:element minOccurs="1" name="External_ID" type="bons13:string30"/>
+			<xsd:element minOccurs="0" name="Activity_Type" type="bons13:string30"/>
+			<xsd:element minOccurs="0" name="Activity_Id" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="CreatedByEmailCERN" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="CreatedByPhoneCERN" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="CreatedByNameCERN" type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Service_Record_Output_V4">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Client_Mnemonic" type="bons03:string15"/>
+			<xsd:element minOccurs="0" name="Contact_Login_ID" type="bons03:string15"/>
+			<xsd:element minOccurs="0" name="Solution_Family" type="bons14:string30"/>
+			<xsd:element minOccurs="0" name="Solution" type="bons14:string30"/>
+			<xsd:element minOccurs="0" name="Environment" type="bons14:string30"/>
+			<xsd:element minOccurs="0" name="Severity" type="bons14:string30"/>
+			<xsd:element minOccurs="0" name="Summary" type="bons14:string100"/>
+			<xsd:element minOccurs="0" name="Description" type="bons22:string1500"/>
+			<xsd:element minOccurs="0" name="IssueImpact_Text" type="bons03:string500"/>
+			<xsd:element minOccurs="0" name="Protected_Health_Information" type="bons14:string100"/>
+			<xsd:element minOccurs="0" name="Project_Team" type="bons14:string30"/>
+			<xsd:element minOccurs="0" name="External_ID" type="bons14:string30"/>
+			<xsd:element minOccurs="0" name="Owner" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Owner_Phone" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Owner_Email" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Sub-Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Conversion_Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Closed" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Entitlement" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Service_Record_Number" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Reopen_Reason" type="xsd:string"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofActivity" type="bons32:Activity_V4"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofAttachment" type="bons41:ListofAttachments"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Activity_V4">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Activity_Text" type="bons04:string1500"/>
+      <xsd:element minOccurs="0" name="External_ID" type="bons15:string30"/>
+      <xsd:element minOccurs="0" name="Activity_Type" type="bons15:string30"/>
+      <xsd:element minOccurs="0" name="Activity_Id" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Activity_Status" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Planned_Start" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="CreatedByEmailCERN" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="CreatedByPhoneCERN" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="CreatedByNameCERN" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+      <xsd:complexType name="AttachmentDetails">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="attachmentId" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="attachmentName" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="attachmentExtension" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="attachmentCreatedDate" type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+    </xsd:schema>
+        <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:bons0="http://CHD_Outbound_LIB" xmlns:xsdLocal1="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN">
+      <xsd:import namespace="http://CHD_Outbound_LIB"/>
+      <xsd:simpleType name="string1500">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1500"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+      <xsd:complexType name="ListOfService_Record_Output_V2">
+		<xsd:sequence>
+			<xsd:element form="unqualified" maxOccurs="unbounded" minOccurs="0" name="Service_Record_Output" type="bons0:Service_Record_Output_V2"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:simpleType name="string64">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="64"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+    </xsd:schema>
+        <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:bons0="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:xsdLocal1="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN">
+      <xsd:simpleType name="string30">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+      <xsd:simpleType name="string100">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+      <xsd:complexType name="Client_Environments">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Environment_Id" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Environment_Name" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Environment_Solution_Type" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Environment_Type" type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListofClient_Environments">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Environments" type="bons0:Client_Environments">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+    </xsd:schema>
+        <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siebel.com/xml/Contact%20CERN" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsdLocal1="http://www.siebel.com/xml/Contact%20CERN">
+      <xsd:simpleType name="string15">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+      <xsd:simpleType name="string500">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="500"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+      <xsd:simpleType name="string10">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+    </xsd:schema>
+        <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siebel.com/xml/SR_LOV_QUERY_Ouput" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsdLocal1="http://www.siebel.com/xml/SR_LOV_QUERY_Ouput">
+      <xsd:complexType name="ChildValue">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Type" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Value" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListOfValueTopElmt">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="ListOfValue" type="xsdLocal1:ListOfValue"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListOfValue">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="1" name="Value" type="xsdLocal1:Value"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:element name="ListOfValue" type="xsdLocal1:ListOfValue"/>
+      <xsd:complexType name="Value">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Type" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Value" type="xsd:string"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ChildValue" type="xsdLocal1:ChildValue"/>
+		</xsd:sequence>
+	</xsd:complexType>
+    </xsd:schema>
+        <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://CHD_LIB" xmlns:bons0="http://www.siebel.com/xml/Contact%20CERN" xmlns:bons01="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN" xmlns:bons010="http://CHD_LIB" xmlns:bons011="http://CHD_LIB" xmlns:bons012="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN" xmlns:bons013="http://CHD_Outbound_LIB" xmlns:bons014="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN" xmlns:bons015="http://CHD_LIB" xmlns:bons016="http://CHD_LIB" xmlns:bons02="http://CHD_Outbound_LIB" xmlns:bons03="http://CHD_LIB" xmlns:bons04="http://CHD_LIB" xmlns:bons05="http://CHD_LIB" xmlns:bons06="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN" xmlns:bons07="http://CHD_LIB" xmlns:bons08="http://CHD_LIB" xmlns:bons09="http://CHD_LIB" xmlns:bons1="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN" xmlns:bons11="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons110="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons111="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons112="http://www.siebel.com/xml/Contact%20CERN" xmlns:bons113="http://www.siebel.com/xml/Contact%20CERN" xmlns:bons114="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons115="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons116="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons12="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons13="http://CHD_Outbound_LIB" xmlns:bons14="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons15="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons16="http://CHD_LIB" xmlns:bons17="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons18="http://CHD_LIB" xmlns:bons19="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons2="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN" xmlns:bons21="http://CHD_Outbound_LIB" xmlns:bons3="http://CHD_LIB" xmlns:bons31="http://CHD_Outbound_LIB" xmlns:bons32="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons33="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN" xmlns:bons34="http://www.siebel.com/xml/Service%20Request%20Detail%20CWx%20CERN" xmlns:bons35="http://www.siebel.com/xml/Contact%20CERN" xmlns:bons36="http://www.siebel.com/xml/Service%20Request%20Detail%20CWx%20CERN" xmlns:bons4="http://CHD_LIB" xmlns:bons41="http://www.siebel.com/xml/Service%20Request%20Detail%20CWx%20CERN" xmlns:bons42="http://www.siebel.com/xml/Contact%20CERN" xmlns:bons43="http://CHD_Outbound_LIB" xmlns:bons44="http://CHD_Outbound_LIB" xmlns:bons5="http://CHD_Outbound_LIB" xmlns:bons51="http://www.siebel.com/xml/Service%20Request%20Attachment%20CERN">
+      <xsd:import namespace="http://www.siebel.com/xml/Service%20Request%20Attachment%20CERN"/>
+      <xsd:import namespace="http://www.siebel.com/xml/Service%20Request%20Detail%20CWx%20CERN"/>
+      <xsd:import namespace="http://CHD_Outbound_LIB"/>
+      <xsd:import namespace="http://www.siebel.com/xml/Contact%20CERN"/>
+      <xsd:import namespace="http://www.siebel.com/xml/Related%20Client%20Environments%20BO%20CERN"/>
+      <xsd:import namespace="http://www.siebel.com/xml/Service%20Request%20Detail%20CHD%20CERN"/>
+      <xsd:complexType name="ListOfService_Record_Output_TopElmt_V2">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListOfService_Record_Output" type="bons1:ListOfService_Record_Output_V2"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Service_Record_Output_V3">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Client_Mnemonic" type="bons0:string15">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Contact_Login_ID" type="bons0:string15">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Solution_Family" type="bons11:string30">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Solution" type="bons11:string30">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Environment" type="bons11:string30">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Severity" type="bons11:string30">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Summary" type="bons11:string100">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Description" type="bons2:string1500">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Protected_Health_Information" type="bons11:string100">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Project_Team" type="bons11:string30">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="External_ID" type="bons11:string30">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Owner" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Owner_Phone" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Owner_Email" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Status" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Sub-Status" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Conversion_Status" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Closed" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Entitlement" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Service_Record_Number" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Reopen_Reason" type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofActivity" type="bons3:Activity_V3">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Activity_V3">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Activity_Text" type="bons01:string1500">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="External_ID" type="bons12:string30">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Activity_Type" type="bons12:string30">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Activity_Id" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Activity_Status" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="CreatedByEmailCERN" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="CreatedByPhoneCERN" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="CreatedByNameCERN" type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListofAttachments">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="HasAttachments" type="xsd:boolean">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="AttachmentDetails" type="bons02:AttachmentDetails">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListOfService_Record_Output_TopElmt_V3">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListOfService_Record_Output" type="bons03:ListOfService_Record_Output_V3">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListOfService_Record_Output_V3">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Service_Record_Output" type="bons04:Service_Record_Output_V3">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListOfService_Record_Output_TopElmt_V4">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="ListOfService_Record_Output" type="bons05:ListOfService_Record_Output_V4"/>
+    </xsd:sequence>
+  </xsd:complexType>
+      <xsd:complexType name="ListOfService_Record_Output_V4">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Service_Record_Output" type="bons13:Service_Record_Output_V4"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Service_Record_Output_V5">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Client_Mnemonic" type="bons0:string15"/>
+			<xsd:element minOccurs="0" name="Contact_Login_ID" type="bons0:string15"/>
+			<xsd:element minOccurs="0" name="Solution_Family" type="bons14:string30"/>
+			<xsd:element minOccurs="0" name="Solution" type="bons14:string30"/>
+			<xsd:element minOccurs="0" name="Environment" type="bons14:string30"/>
+			<xsd:element minOccurs="0" name="Severity" type="bons14:string30"/>
+			<xsd:element minOccurs="0" name="Summary" type="bons14:string100"/>
+			<xsd:element minOccurs="0" name="Description" type="bons2:string1500"/>
+			<xsd:element minOccurs="0" name="IssueImpact_Text" type="bons0:string500"/>
+			<xsd:element minOccurs="0" name="Protected_Health_Information" type="bons14:string100"/>
+			<xsd:element minOccurs="0" name="Project_Team" type="bons14:string30"/>
+			<xsd:element minOccurs="0" name="External_ID" type="bons14:string30"/>
+			<xsd:element minOccurs="0" name="Owner" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Owner_Phone" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Owner_Email" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Reporting_User" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Reporting_User_Contact_Info" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Sub-Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Conversion_Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Closed" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Entitlement" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Service_Record_Number" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Reopen_Reason" type="xsd:string"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofActivity" type="bons31:Activity_V4"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofAttachment" type="bons4:ListofAttachments"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Service_Record_Output_V6">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="PHIFlag" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Client_Mnemonic" type="bons0:string15"/>
+			<xsd:element minOccurs="0" name="Contact_Login_ID" type="bons0:string15"/>
+			<xsd:element minOccurs="0" name="Solution_Family" type="bons15:string30"/>
+			<xsd:element minOccurs="0" name="Solution" type="bons15:string30"/>
+			<xsd:element minOccurs="0" name="Environment" type="bons15:string30"/>
+			<xsd:element minOccurs="0" name="Severity" type="bons15:string30"/>
+			<xsd:element minOccurs="0" name="Summary" type="bons15:string100"/>
+			<xsd:element minOccurs="0" name="Description" type="bons2:string1500"/>
+			<xsd:element minOccurs="0" name="IssueImpact_Text" type="bons0:string500"/>
+			<xsd:element minOccurs="0" name="Protected_Health_Information" type="bons15:string100"/>
+			<xsd:element minOccurs="0" name="Project_Team" type="bons15:string30"/>
+			<xsd:element minOccurs="0" name="External_ID" type="bons15:string30"/>
+			<xsd:element minOccurs="0" name="Owner" type="xsd:string"/>
+
+			<xsd:element minOccurs="0" name="Owner_Phone" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Owner_Email" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Reporting_User" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Reporting_User_Contact_Info" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Sub-Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Conversion_Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Closed" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Entitlement" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Service_Record_Number" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Reopen_Reason" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Last_Updated" type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofActivity" type="bons4:Activity_V5"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofAttachment" type="bons4:ListofAttachments_V2"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListofAttachments_V2">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="HasAttachments" type="xsd:boolean"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="AttachmentDetails" type="bons16:AttachmentDetails_V2"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="AttachmentDetails_V2">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="PHIFlag" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="attachmentId" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="attachmentName" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="attachmentExtension" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="attachmentCreatedDate" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Activity_V5">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="PHIFlag" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Activity_Text" type="bons06:string1500"/>
+			<xsd:element minOccurs="0" name="External_ID" type="bons17:string30"/>
+			<xsd:element minOccurs="0" name="Activity_Type" type="bons17:string30"/>
+			<xsd:element minOccurs="0" name="Activity_Id" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Activity_Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Planned_Start" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="CreatedByEmailCERN" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="CreatedByPhoneCERN" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="CreatedByNameCERN" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListOfService_Record_Output_TopElmt_V5">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListOfService_Record_Output" type="bons07:ListOfService_Record_Output_V5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListOfService_Record_Output_V5">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Service_Record_Output" type="bons18:Service_Record_Output_V5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Service_Record_Output_V7">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="PHIFlag" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Client_Mnemonic" type="bons0:string15"/>
+			<xsd:element minOccurs="0" name="Contact_Login_ID" type="bons0:string15"/>
+			<xsd:element minOccurs="0" name="Solution_Family" type="bons19:string30"/>
+			<xsd:element minOccurs="0" name="Solution" type="bons19:string30"/>
+			<xsd:element minOccurs="0" name="Environment" type="bons19:string30"/>
+			<xsd:element minOccurs="0" name="Severity" type="bons19:string30"/>
+			<xsd:element minOccurs="0" name="Summary" type="bons19:string100"/>
+			<xsd:element minOccurs="0" name="Description" type="bons2:string1500"/>
+			<xsd:element minOccurs="0" name="IssueImpact_Text" type="bons0:string500"/>
+			<xsd:element minOccurs="0" name="Protected_Health_Information" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Project_Team" type="bons19:string30"/>
+			<xsd:element minOccurs="0" name="External_ID" type="bons19:string30"/>
+			<xsd:element minOccurs="0" name="Owner" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Owner_Phone" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Owner_Email" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Reporting_User" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Reporting_User_Contact_Info" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Sub-Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Conversion_Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Closed" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Entitlement" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Service_Record_Number" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Reopen_Reason" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Last_Updated" type="xsd:string"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofActivity" type="bons3:Activity_V5"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofAttachment" type="bons3:ListofAttachments_V2"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListOfService_Record_Output_TopElmt_V6">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListOfService_Record_Output" type="bons08:ListOfService_Record_Output_V6"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListOfService_Record_Output_V6">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Service_Record_Output" type="bons09:Service_Record_Output_V6"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListOfService_Record_Output_TopElmt_V7">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListOfService_Record_Output" type="bons010:ListOfService_Record_Output_V7">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListOfService_Record_Output_V7">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Service_Record_Output" type="bons011:Service_Record_Output_V7">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Service_Record_Output_V8">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="PHIFlag" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Client_Mnemonic" type="bons0:string15"/>
+			<xsd:element minOccurs="0" name="Contact_Login_ID" type="bons0:string15"/>
+			<xsd:element minOccurs="0" name="Solution_Family" type="bons110:string30"/>
+			<xsd:element minOccurs="0" name="Solution" type="bons110:string30"/>
+			<xsd:element minOccurs="0" name="Environment" type="bons110:string30"/>
+			<xsd:element minOccurs="0" name="Severity" type="bons110:string30"/>
+			<xsd:element minOccurs="0" name="Summary" type="bons110:string100"/>
+			<xsd:element minOccurs="0" name="Description" type="bons2:string1500"/>
+			<xsd:element minOccurs="0" name="IssueImpact_Text" type="bons0:string500"/>
+			<xsd:element minOccurs="0" name="Protected_Health_Information" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Project_Team" type="bons110:string30"/>
+			<xsd:element minOccurs="0" name="External_ID" type="bons110:string30"/>
+			<xsd:element minOccurs="0" name="Owner" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Owner_Phone" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Owner_Email" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Reporting_User" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Reporting_User_Contact_Info" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Sub-Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Conversion_Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Closed" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Entitlement" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Service_Record_Number" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Reopen_Reason" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Last_Updated" type="xsd:string"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofActivity" type="bons3:Activity_V6"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofAttachment" type="bons3:ListofAttachments_V2"/>
+			<xsd:element minOccurs="0" name="Priority" type="bons110:string30">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Activity_V6">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="PHIFlag" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Activity_Text" type="bons012:string1500"/>
+			<xsd:element minOccurs="0" name="External_ID" type="bons111:string30"/>
+			<xsd:element minOccurs="0" name="Activity_Type" type="bons111:string30"/>
+			<xsd:element minOccurs="0" name="Activity_Id" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Activity_Status" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="Planned_Start" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="CreatedByEmailCERN" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="CreatedByPhoneCERN" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="CreatedByNameCERN" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="OwnerEmail" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="OwnerFullName" type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Service_Record_Insert">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="Client_Mnemonic" type="bons112:string15">
+			</xsd:element>
+			<xsd:element minOccurs="1" name="Contact_Login_ID" type="bons112:string15">
+			</xsd:element>
+			<xsd:element minOccurs="1" name="Solution_Family" type="bons32:string30">
+			</xsd:element>
+			<xsd:element minOccurs="1" name="Solution" type="bons32:string30">
+			</xsd:element>
+			<xsd:element minOccurs="1" name="Environment" type="bons32:string30">
+			</xsd:element>
+			<xsd:element minOccurs="1" name="Severity" type="bons32:string30">
+			</xsd:element>
+			<xsd:element minOccurs="1" name="Summary" type="bons32:string100">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Description" type="bons2:string1500">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Protected_Health_Information" type="bons32:string100">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Project_Team" type="bons32:string30">
+			</xsd:element>
+			<xsd:element minOccurs="1" name="External_ID" type="bons32:string30">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ReportingUser" type="bons41:string100">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ReportingUserContactInfo" type="bons41:string100">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofActivities" type="bons013:Activity">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Service_Record_Update">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="Contact_Login_ID" type="bons113:string15"/>
+			<xsd:element minOccurs="1" name="Summary" type="bons33:string100"/>
+			<xsd:element minOccurs="0" name="Description" type="bons014:string1500"/>
+			<xsd:element minOccurs="0" name="Protected_Health_Information" type="bons33:string100"/>
+			<xsd:element minOccurs="1" name="External_ID" type="bons33:string30"/>
+			<xsd:element minOccurs="0" name="Service_Record_Number" type="bons014:string64">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofActivities" type="bons21:Activity"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListOfService_Record_Output_TopElmt_V8">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListOfService_Record_Output" type="bons015:ListOfService_Record_Output_V8">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ListOfService_Record_Output_V8">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Service_Record_Output" type="bons016:Service_Record_Output_V8">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Service_Record_Insert_V2">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="Client_Mnemonic" type="bons0:string15"/>
+			<xsd:element minOccurs="1" name="Contact_Login_ID" type="bons0:string15"/>
+			<xsd:element minOccurs="1" name="Solution_Family" type="bons114:string30"/>
+			<xsd:element minOccurs="1" name="Solution" type="bons114:string30"/>
+			<xsd:element minOccurs="1" name="Environment" type="bons114:string30"/>
+			<xsd:element minOccurs="1" name="Severity" type="bons114:string30"/>
+			<xsd:element minOccurs="1" name="Summary" type="bons114:string100"/>
+			<xsd:element minOccurs="0" name="Description" type="bons2:string1500"/>
+			<xsd:element minOccurs="0" name="IssueImpact_Text" type="bons0:string500"/>
+			<xsd:element minOccurs="0" name="Protected_Health_Information" type="bons114:string100"/>
+			<xsd:element minOccurs="0" name="Project_Team" type="bons114:string30"/>
+			<xsd:element minOccurs="1" name="External_ID" type="bons114:string30"/>
+			<xsd:element minOccurs="0" name="ReportingUser" type="bons34:string100"/>
+			<xsd:element minOccurs="0" name="ReportingUserContactInfo" type="bons34:string100"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofActivities" type="bons5:Activity_V4"/>
+
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Service_Record_Update_V2">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="Contact_Login_ID" type="bons0:string15"/>
+			<xsd:element minOccurs="1" name="Summary" type="bons115:string100"/>
+			<xsd:element minOccurs="0" name="Description" type="bons2:string1500"/>
+			<xsd:element minOccurs="0" name="IssueImpact_Text" type="bons0:string500"/>
+			<xsd:element minOccurs="0" name="Protected_Health_Information" type="bons115:string100"/>
+			<xsd:element minOccurs="1" name="External_ID" type="bons115:string30"/>
+			<xsd:element minOccurs="0" name="Service_Record_Number" type="bons2:string64"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofActivities" type="bons43:Activity_V4"/>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="Service_Record_Insert_V4">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="Client_Mnemonic" type="bons0:string15"/>
+      <xsd:element minOccurs="1" name="Contact_Login_ID" type="bons0:string15"/>
+      <xsd:element minOccurs="1" name="Solution_Family" type="bons116:string30"/>
+      <xsd:element minOccurs="1" name="Solution" type="bons116:string30"/>
+      <xsd:element minOccurs="1" name="Environment" type="bons116:string30"/>
+      <xsd:element minOccurs="1" name="Severity" type="bons116:string30"/>
+      <xsd:element minOccurs="1" name="Summary" type="bons116:string100"/>
+      <xsd:element minOccurs="0" name="Description" type="bons2:string1500"/>
+      <xsd:element minOccurs="0" name="IssueImpact_Text" type="bons0:string500"/>
+      <xsd:element minOccurs="0" name="Protected_Health_Information" type="bons116:string100"/>
+      <xsd:element minOccurs="0" name="Project_Team" type="bons116:string30"/>
+      <xsd:element minOccurs="1" name="External_ID" type="bons116:string30"/>
+      <xsd:element minOccurs="0" name="ReportingUser" type="bons36:string100"/>
+      <xsd:element minOccurs="0" name="ReportingUserContactInfo" type="bons36:string100"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="ListofActivities" type="bons44:Activity_V4"/>
+      <xsd:element minOccurs="0" name="Priority" type="bons51:string30"/>
+    </xsd:sequence>
+  </xsd:complexType>
+    </xsd:schema>
+        <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://CHD_LIB/SBL_SRAttachment">
+      <xsd:complexType name="ServiceRequestAttachmentQueryOutput">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="External_ID" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Service_Record_Number" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Comments" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="File_Extension" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="File_Name" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Binary_File" type="xsd:base64Binary"/>
+    </xsd:sequence>
+  </xsd:complexType>
+      <xsd:complexType name="ServiceRequestAttachmentInput">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="External_ID" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Service_Record_Number" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Comments" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="File_Extension" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="File_Name" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Binary_File" type="xsd:base64Binary">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+      <xsd:complexType name="ServiceRequestAttachmentQueryInput">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="SRNumber" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="1" name="External_Id" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="1" name="attachmentId" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="1" name="attachmentName" type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+    </xsd:schema>
+        <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siebel.com/xml/Service%20Request%20Attachment%20CERN" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsdLocal1="http://www.siebel.com/xml/Service%20Request%20Attachment%20CERN">
+      <xsd:simpleType name="string30">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+    </xsd:schema>
+        <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://wservice.cerner.com/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://wservice.cerner.com/">
+      <xsd:element name="SR_ATT_INSRT_Output">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Status" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+    </xsd:schema>
+        <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siebel.com/xml/Service%20Request%20Detail%20CWx%20CERN" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsdLocal1="http://www.siebel.com/xml/Service%20Request%20Detail%20CWx%20CERN">
+      <xsd:simpleType name="string100">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+      <xsd:simpleType name="string10">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+    </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="Service_Record_InsertRequestMsg">
+    <wsdl:part element="tns:Service_Record_Insert" name="Service_Record_InsertParameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_InsertResponseMsg">
+    <wsdl:part element="tns:Service_Record_InsertResponse" name="Service_Record_InsertResult"/>
+  </wsdl:message>
+  <wsdl:message name="Service_Record_Insert_V2RequestMsg">
+    <wsdl:part element="tns:Service_Record_Insert_V2" name="Service_Record_Insert_V2Parameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Insert_V2ResponseMsg">
+    <wsdl:part element="tns:Service_Record_Insert_V2Response" name="Service_Record_Insert_V2Result"/>
+  </wsdl:message>
+  <wsdl:message name="Service_Record_Insert_V3RequestMsg">
+    <wsdl:part element="tns:Service_Record_Insert_V3" name="Service_Record_Insert_V2Parameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Insert_V3ResponseMsg">
+    <wsdl:part element="tns:Service_Record_Insert_V3Response" name="Service_Record_Insert_V2Result"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_UpdateRequestMsg">
+    <wsdl:part element="tns:Service_Record_Update" name="Service_Record_UpdateParameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_UpdateResponseMsg">
+    <wsdl:part element="tns:Service_Record_UpdateResponse" name="Service_Record_UpdateResult"/>
+  </wsdl:message>
+  <wsdl:message name="Service_Record_Update_V2RequestMsg">
+    <wsdl:part element="tns:Service_Record_Update_V2" name="Service_Record_Update_V2Parameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Update_V2ResponseMsg">
+    <wsdl:part element="tns:Service_Record_Update_V2Response" name="Service_Record_Update_V2Result"/>
+  </wsdl:message>
+    <wsdl:message name="Cerner_ENV_QueryRequestMsg">
+    <wsdl:part element="tns:Cerner_ENV_Query" name="Cerner_ENV_QueryParameters"/>
+  </wsdl:message>
+    <wsdl:message name="Cerner_ENV_QueryResponseMsg">
+    <wsdl:part element="tns:Cerner_ENV_QueryResponse" name="Cerner_ENV_QueryResult"/>
+  </wsdl:message>
+    <wsdl:message name="Cerner_ENV_Query_Error_MessageMsg">
+    <wsdl:part element="tns:string_element" name="Error_Message"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Update_Error_MessageMsg">
+    <wsdl:part element="tns:string_element" name="Error_Message"/>
+  </wsdl:message>
+  <wsdl:message name="Service_Record_Update_V2_Error_MessageMsg">
+    <wsdl:part element="tns:string_element" name="Error_Message"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Insert_Error_MessageMsg">
+    <wsdl:part element="tns:string_element" name="Error_Message"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Insert_V2_Error_MessageMsg">
+    <wsdl:part element="tns:string_element" name="Error_Message"/>
+  </wsdl:message>
+  <wsdl:message name="Service_Record_Insert_V3_Error_MessageMsg">
+    <wsdl:part element="tns:string_element" name="Error_Message"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_OutboundRequestMsg">
+    <wsdl:part element="tns:Service_Record_Outbound" name="Service_Record_OutboundParameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_OutboundResponseMsg">
+    <wsdl:part element="tns:Service_Record_OutboundResponse" name="Service_Record_OutboundResult"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_Error_MessageMsg">
+    <wsdl:part element="tns:string_element" name="Error_Message"/>
+  </wsdl:message>
+    <wsdl:message name="LOV_QueryRequestMsg">
+    <wsdl:part element="tns:LOV_Query" name="LOV_QueryParameters"/>
+  </wsdl:message>
+    <wsdl:message name="LOV_QueryResponseMsg">
+    <wsdl:part element="tns:LOV_QueryResponse" name="LOV_QueryResult"/>
+  </wsdl:message>
+    <wsdl:message name="LOV_Query_Error_MessageMsg">
+    <wsdl:part element="tns:string_element" name="Error_Message"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V2Msg0">
+    <wsdl:part element="tns:Service_Record_Outbound_V2" name="Service_Record_OutboundParameters1"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V2Msg1">
+    <wsdl:part element="tns:Service_Record_Outbound_V2Response" name="Service_Record_OutboundResult1"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V2Msg2">
+    <wsdl:part element="tns:string_element1" name="Error_Message1"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_AttachmentRequestMsg">
+    <wsdl:part element="tns:Service_Record_Attachment" name="Service_Record_AttachmentParameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_AttachmentResponseMsg">
+    <wsdl:part element="tns:Service_Record_AttachmentResponse" name="Service_Record_AttachmentResult"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Attachment_fault1Msg">
+    <wsdl:part element="tns:string_element" name="fault1"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Attachment_QueryRequestMsg">
+    <wsdl:part element="tns:Service_Record_Attachment_Query" name="Service_Record_Attachment_QueryParameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Attachment_QueryResponseMsg">
+    <wsdl:part element="tns:Service_Record_Attachment_QueryResponse" name="Service_Record_Attachment_QueryResult"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Attachment_Query_fault1Msg">
+    <wsdl:part element="tns:string_element" name="fault1"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V3RequestMsg">
+    <wsdl:part element="tns:Service_Record_Outbound_V3" name="Service_Record_Outbound_V3Parameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V3ResponseMsg">
+    <wsdl:part element="tns:Service_Record_Outbound_V3Response" name="Service_Record_Outbound_V3Result"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V3_Service_Record_Outbound_V3Fault1Msg">
+    <wsdl:part element="tns:Service_Record_Outbound_V3Fault1" name="Service_Record_Outbound_V3Fault1"/>
+  </wsdl:message>
+  <wsdl:message name="Service_Record_Outbound_V4RequestMsg">
+    <wsdl:part element="tns:Service_Record_Outbound_V4" name="Service_Record_Outbound_V4Parameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V4ResponseMsg">
+    <wsdl:part element="tns:Service_Record_Outbound_V4Response" name="Service_Record_Outbound_V4Result"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V4_Service_Record_Outbound_V4Fault1Msg">
+    <wsdl:part element="tns:Service_Record_Outbound_V4Fault1" name="Service_Record_Outbound_V4Fault1"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V5RequestMsg">
+    <wsdl:part element="tns:Service_Record_Outbound_V5" name="Service_Record_Outbound_V5Parameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V5ResponseMsg">
+    <wsdl:part element="tns:Service_Record_Outbound_V5Response" name="Service_Record_Outbound_V5Result"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V5_Service_Record_Outbound_V5Fault1Msg">
+    <wsdl:part element="tns:Service_Record_Outbound_V5Fault1_Service_Record_Outbound_V5Fault1" name="Service_Record_Outbound_V5Fault1"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V6RequestMsg">
+    <wsdl:part element="tns:Service_Record_Outbound_V6" name="Service_Record_Outbound_V6Parameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V6ResponseMsg">
+    <wsdl:part element="tns:Service_Record_Outbound_V6Response" name="Service_Record_Outbound_V6Result"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V6_Service_Record_Outbound_V6Fault1Msg">
+    <wsdl:part element="tns:Service_Record_Outbound_V6Fault1_Service_Record_Outbound_V6Fault1" name="Service_Record_Outbound_V6Fault1"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V7RequestMsg">
+    <wsdl:part element="tns:Service_Record_Outbound_V7" name="Service_Record_Outbound_V7Parameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V7ResponseMsg">
+    <wsdl:part element="tns:Service_Record_Outbound_V7Response" name="Service_Record_Outbound_V7Result"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V7_Service_Record_Outbound_V7Fault1Msg">
+    <wsdl:part element="tns:Service_Record_Outbound_V7Fault1" name="Service_Record_Outbound_V7Fault1"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V8RequestMsg">
+    <wsdl:part element="tns:Service_Record_Outbound_V8" name="Service_Record_Outbound_V8Parameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V8ResponseMsg">
+    <wsdl:part element="tns:Service_Record_Outbound_V8Response" name="Service_Record_Outbound_V8Result"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Outbound_V8_Service_Record_Outbound_V8Fault1Msg">
+    <wsdl:part element="tns:Service_Record_Outbound_V8Fault1" name="Service_Record_Outbound_V8Fault1"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Insert_V4RequestMsg">
+    <wsdl:part element="tns:Service_Record_Insert_V4" name="Service_Record_Insert_V4Parameters"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Insert_V4ResponseMsg">
+    <wsdl:part element="tns:Service_Record_Insert_V4Response" name="Service_Record_Insert_V4Result"/>
+  </wsdl:message>
+    <wsdl:message name="Service_Record_Insert_V4_Error_MessageMsg">
+    <wsdl:part element="tns:Service_Record_Insert_V4Fault1_Error_Message" name="Error_Message"/>
+  </wsdl:message>
+    <wsdl:portType name="CHD">
+    <wsdl:operation name="Service_Record_Insert">
+      <wsdl:input message="tns:Service_Record_InsertRequestMsg" name="Service_Record_InsertRequest"/>
+            <wsdl:output message="tns:Service_Record_InsertResponseMsg" name="Service_Record_InsertResponse"/>
+            <wsdl:fault message="tns:Service_Record_Insert_Error_MessageMsg" name="Error_Message"/>
+        </wsdl:operation>
+      <wsdl:operation name="Service_Record_Insert_V2">
+      <wsdl:input message="tns:Service_Record_Insert_V2RequestMsg" name="Service_Record_Insert_V2Request"/>
+            <wsdl:output message="tns:Service_Record_Insert_V2ResponseMsg" name="Service_Record_Insert_V2Response"/>
+            <wsdl:fault message="tns:Service_Record_Insert_V2_Error_MessageMsg" name="Error_Message"/>
+        </wsdl:operation>
+      <wsdl:operation name="Service_Record_Insert_V3">
+      <wsdl:input message="tns:Service_Record_Insert_V3RequestMsg" name="Service_Record_Insert_V3Request"/>
+            <wsdl:output message="tns:Service_Record_Insert_V3ResponseMsg" name="Service_Record_Insert_V3Response"/>
+            <wsdl:fault message="tns:Service_Record_Insert_V3_Error_MessageMsg" name="Error_Message"/>
+        </wsdl:operation>  
+        <wsdl:operation name="Service_Record_Update">
+      <wsdl:input message="tns:Service_Record_UpdateRequestMsg" name="Service_Record_UpdateRequest"/>
+      <wsdl:output message="tns:Service_Record_UpdateResponseMsg" name="Service_Record_UpdateResponse"/>
+            <wsdl:fault message="tns:Service_Record_Update_Error_MessageMsg" name="Error_Message"/>
+        </wsdl:operation>
+        <wsdl:operation name="Service_Record_Update_V2">
+      <wsdl:input message="tns:Service_Record_Update_V2RequestMsg" name="Service_Record_Update_V2Request"/>
+      <wsdl:output message="tns:Service_Record_Update_V2ResponseMsg" name="Service_Record_Update_V2Response"/>
+            <wsdl:fault message="tns:Service_Record_Update_V2_Error_MessageMsg" name="Error_Message"/>
+        </wsdl:operation>
+        <wsdl:operation name="Cerner_ENV_Query">
+            <wsdl:input message="tns:Cerner_ENV_QueryRequestMsg" name="Cerner_ENV_QueryRequest"/>
+            <wsdl:output message="tns:Cerner_ENV_QueryResponseMsg" name="Cerner_ENV_QueryResponse"/>
+            <wsdl:fault message="tns:Cerner_ENV_Query_Error_MessageMsg" name="Error_Message"/>
+        </wsdl:operation>
+        <wsdl:operation name="Service_Record_Outbound">
+      <wsdl:input message="tns:Service_Record_OutboundRequestMsg" name="Service_Record_OutboundRequest"/>
+      <wsdl:output message="tns:Service_Record_OutboundResponseMsg" name="Service_Record_Outbound1Msg1"/>
+      <wsdl:fault message="tns:Service_Record_Outbound_Error_MessageMsg" name="Error_Message"/>
+    </wsdl:operation>
+        <wsdl:operation name="LOV_Query">
+      <wsdl:input message="tns:LOV_QueryRequestMsg" name="LOV_QueryRequest"/>
+      <wsdl:output message="tns:LOV_QueryResponseMsg" name="LOV_QueryResponse"/>
+      <wsdl:fault message="tns:LOV_Query_Error_MessageMsg" name="Error_Message"/>
+    </wsdl:operation>
+        <wsdl:operation name="Service_Record_Outbound_V2">
+      <wsdl:input message="tns:Service_Record_Outbound_V2Msg0" name="Service_Record_Outbound_V2Request"/>
+      <wsdl:output message="tns:Service_Record_Outbound_V2Msg1" name="Service_Record_Outbound_V2Response"/>
+      <wsdl:fault message="tns:Service_Record_Outbound_V2Msg2" name="Error_Message"/>
+    </wsdl:operation>
+        <wsdl:operation name="Service_Record_Attachment">
+      <wsdl:input message="tns:Service_Record_AttachmentRequestMsg" name="Service_Record_AttachmentRequest"/>
+      <wsdl:output message="tns:Service_Record_AttachmentResponseMsg" name="Service_Record_AttachmentResponse"/>
+      <wsdl:fault message="tns:Service_Record_Attachment_fault1Msg" name="fault1"/>
+    </wsdl:operation>
+	<wsdl:operation name="Service_Record_Attachment_Query">
+      <wsdl:input message="tns:Service_Record_Attachment_QueryRequestMsg" name="Service_Record_Attachment_QueryRequest"/>
+      <wsdl:output message="tns:Service_Record_Attachment_QueryResponseMsg" name="Service_Record_Attachment_QueryResponse"/>
+      <wsdl:fault message="tns:Service_Record_Attachment_Query_fault1Msg" name="fault1"/>
+    </wsdl:operation>
+        <wsdl:operation name="Service_Record_Outbound_V3">
+      <wsdl:input message="tns:Service_Record_Outbound_V3RequestMsg" name="Service_Record_Outbound_V3Request"/>
+      <wsdl:output message="tns:Service_Record_Outbound_V3ResponseMsg" name="Service_Record_Outbound_V3Response"/>
+      <wsdl:fault message="tns:Service_Record_Outbound_V3_Service_Record_Outbound_V3Fault1Msg" name="Service_Record_Outbound_V3Fault1"/>
+    </wsdl:operation>
+    <wsdl:operation name="Service_Record_Outbound_V4">
+      <wsdl:input message="tns:Service_Record_Outbound_V4RequestMsg" name="Service_Record_Outbound_V4Request"/>
+      <wsdl:output message="tns:Service_Record_Outbound_V4ResponseMsg" name="Service_Record_Outbound_V4Response"/>
+      <wsdl:fault message="tns:Service_Record_Outbound_V4_Service_Record_Outbound_V4Fault1Msg" name="Service_Record_Outbound_V4Fault1"/>
+    </wsdl:operation>
+        <wsdl:operation name="Service_Record_Outbound_V5">
+      <wsdl:input message="tns:Service_Record_Outbound_V5RequestMsg" name="Service_Record_Outbound_V5Request"/>
+      <wsdl:output message="tns:Service_Record_Outbound_V5ResponseMsg" name="Service_Record_Outbound_V5Response"/>
+      <wsdl:fault message="tns:Service_Record_Outbound_V5_Service_Record_Outbound_V5Fault1Msg" name="Service_Record_Outbound_V5Fault1"/>
+    </wsdl:operation>
+        <wsdl:operation name="Service_Record_Outbound_V6">
+      <wsdl:input message="tns:Service_Record_Outbound_V6RequestMsg" name="Service_Record_Outbound_V6Request"/>
+      <wsdl:output message="tns:Service_Record_Outbound_V6ResponseMsg" name="Service_Record_Outbound_V6Response"/>
+      <wsdl:fault message="tns:Service_Record_Outbound_V6_Service_Record_Outbound_V6Fault1Msg" name="Service_Record_Outbound_V6Fault1"/>
+    </wsdl:operation>
+        <wsdl:operation name="Service_Record_Outbound_V7">
+      <wsdl:input message="tns:Service_Record_Outbound_V7RequestMsg" name="Service_Record_Outbound_V7Request"/>
+      <wsdl:output message="tns:Service_Record_Outbound_V7ResponseMsg" name="Service_Record_Outbound_V7Response"/>
+      <wsdl:fault message="tns:Service_Record_Outbound_V7_Service_Record_Outbound_V7Fault1Msg" name="Service_Record_Outbound_V7Fault1"/>
+    </wsdl:operation>
+        <wsdl:operation name="Service_Record_Outbound_V8">
+      <wsdl:input message="tns:Service_Record_Outbound_V8RequestMsg" name="Service_Record_Outbound_V8Request"/>
+      <wsdl:output message="tns:Service_Record_Outbound_V8ResponseMsg" name="Service_Record_Outbound_V8Response"/>
+      <wsdl:fault message="tns:Service_Record_Outbound_V8_Service_Record_Outbound_V8Fault1Msg" name="Service_Record_Outbound_V8Fault1"/>
+    </wsdl:operation>
+        <wsdl:operation name="Service_Record_Insert_V4">
+      <wsdl:input message="tns:Service_Record_Insert_V4RequestMsg" name="Service_Record_Insert_V4Request"/>
+            <wsdl:output message="tns:Service_Record_Insert_V4ResponseMsg" name="Service_Record_Insert_V4Response"/>
+            <wsdl:fault message="tns:Service_Record_Insert_V4_Error_MessageMsg" name="Error_Message"/>
+    </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="Invoke_CHDHttpBinding" type="tns:CHD">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="Service_Record_Insert">
       <soap:operation soapAction=""/>
@@ -221,9 +1500,9 @@
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="Invoke_CHDHttpService">
-    <wsdl:port name="Invoke_CHDHttpPort" binding="this:Invoke_CHDHttpBinding">
-      <soap:address location="http://wservicecrt.cerner.com:80/CHD_INTFWeb/sca/Invoke"/>
+    <wsdl:service name="Invoke_CHDHttpService">
+    <wsdl:port binding="tns:Invoke_CHDHttpBinding" name="Invoke_CHDHttpPort">
+      <soap:address location="http://localhost:9080/CHD_INTFWeb/sca/Invoke"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
